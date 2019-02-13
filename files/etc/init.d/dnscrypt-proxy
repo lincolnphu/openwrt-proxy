@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2009-2010 OpenWrt.org
+START=92
+STOP=82
+
+SERVICE_USE_PID=1                                                                                                                                                                                                  
+SERVICE_WRITE_PID=1                                                                                                                                                                                                
+SERVICE_DAEMONIZE=1                                                                                                                                                                                                
+SERVICE_PID_FILE=/var/run/dnscrypt-proxy.pid                                                                                                                                                                             
+start(){                                                                                                                                                                                                           
+    service_start /usr/bin/dnscrypt-proxy   -config /etc/config/example-dnscrypt-proxy.toml
+}                                                                                                                                                                                                                  
+                                                                                                                                                                                                                   
+stop() {                                                                                                                                                                                                           
+    # Proxy Mode                                                                                                                                                                                                   
+    service_stop /usr/bin/dnscrypt-proxy                                                                                                                                                                                 
+} 

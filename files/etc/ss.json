@@ -1,0 +1,12 @@
+{
+    "server":"104.225.154.108",                                                                                                                                                                                          
+    "server_port":443,                                                                                                                                                                                            
+    "local_address":"0.0.0.0",                                                                                                                                                                                     
+    "local_port":1080,                                                                                                                                                                                             
+    "password":"barfoo!",                                                                                                                                                                                          
+    "timeout":60,                                                                                                                                                                                                  
+    "method":"xchacha20-ietf-poly1305",                                                                                                                                                                            
+    "mode":"tcp_only",                                                                                                                                                                                             
+    "plugin":"/usr/bin/client",                                                                                                                                                                                
+    "plugin_opts":"/etc/client.json"                                                                                                                                                                
+} 

@@ -1,0 +1,14 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+
+ipset create list_v4 hash:ip family inet
+ipset create list_v6 hash:ip family inet6
+
+iptables -t nat -A PREROUTING -p tcp -m set --match-set list_v4 dst -j REDIRECT --to-port 1080
+iptables -t nat -A OUTPUT -p tcp -m set --match-set list_v4 dst -j REDIRECT --to-port 1080
+
+ip6tables -t nat -A PREROUTING -p tcp -m set --match-set list_v6 dst -j REDIRECT --to-port 1080
+ip6tables -t nat -A OUTPUT -p tcp -m set --match-set list_v6 dst -j REDIRECT --to-port 1080
+
+exit 0

@@ -1,0 +1,16 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2009-2010 OpenWrt.org
+START=91
+STOP=81
+
+SERVICE_USE_PID=1
+SERVICE_WRITE_PID=1
+SERVICE_DAEMONIZE=1
+SERVICE_PID_FILE=/var/run/ss-redir.pid
+start(){
+    service_start /usr/bin/ss-redir   -c /etc/ss.json 2>&1 > /dev/null
+} 
+stop() {
+    # Proxy Mode
+    service_stop /usr/bin/ss-redir
+} 
