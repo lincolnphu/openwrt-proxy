@@ -208,6 +208,7 @@ platform_check_image() {
 	x5|\
 	x8|\
 	y1|\
+	x2|\
 	y1s|\
 	youhua,wr1200js|\
 	we1026-5g-16m|\

@@ -385,6 +385,10 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"0:lan:2" "1:lan:1" "4:wan" "6@eth0"
 		;;
+	x2)
+		ucidef_add_switch "switch0" \
+			"4:lan:2" "1:lan:1" "0:wan" "6@eth0"
+		;;
 	*)
 		RT3X5X=`cat /proc/cpuinfo | egrep "(RT3.5|RT5350)"`
 		if [ -n "${RT3X5X}" ]; then
@@ -428,6 +432,7 @@ ramips_setup_macs()
 	psr-680w|\
 	sl-r7205|\
 	y1|\
+	x2|\
 	y1s)
 		lan_mac=$(cat /sys/class/net/eth0/address)
 		lan_mac=$(macaddr_setbit_la "$lan_mac")

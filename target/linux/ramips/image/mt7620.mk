@@ -589,6 +589,13 @@ define Device/y1
 endef
 TARGET_DEVICES += y1
 
+define Device/x2
+  DTS := X2
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+  DEVICE_TITLE := Youku X2
+endef
+TARGET_DEVICES += x2
+
 define Device/y1s
   DTS := Y1S
   IMAGE_SIZE := $(ralink_default_fw_size_16M)

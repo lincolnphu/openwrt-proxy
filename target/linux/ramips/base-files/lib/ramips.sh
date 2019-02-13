@@ -670,6 +670,9 @@ ramips_board_detect() {
 	*"Y1")
 		name="y1"
 		;;
+	*"X2")
+		name="x2"
+		;;
 	*"Y1S")
 		name="y1s"
 		;;
