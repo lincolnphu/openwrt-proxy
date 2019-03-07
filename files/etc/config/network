@@ -20,18 +20,17 @@ config device 'lan_dev'
 	option name 'eth0.1'
 
 config interface 'wan'
-	option ifname 'eth0.2'
-	option proto 'pppoe'
-	option username '13418955259'
-	option password '955259'
-	option ipv6 'auto'
+	option proto 'dhcp'
+	option ifname 'eth0.2 eth0'
 
 config device 'wan_dev'
 	option name 'eth0.2'
 
 config interface 'wan6'
 	option ifname 'eth0.2'
-	option proto 'none'
+	option proto 'dhcpv6'
+	option reqaddress 'try'
+	option reqprefix 'auto'
 
 config switch
 	option name 'switch0'
